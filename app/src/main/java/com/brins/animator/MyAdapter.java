@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MyAdapter extends FragmentPagerAdapter {
 
-    private final List<Fragment> fragmentList=new ArrayList<>();
+    private final List<Fragmentbase> fragmentList=new ArrayList<>();
     private final List<String> fragmentTitle=new ArrayList<>();
 
     public MyAdapter(FragmentManager fm) {
@@ -24,7 +24,7 @@ public class MyAdapter extends FragmentPagerAdapter {
         return fragmentTitle.get(position);
     }
 
-    public void addFragment(Fragment fragment,String title){
+    public void addFragment(Fragmentbase fragment,String title){
         fragmentList.add(fragment);
         fragmentTitle.add(title);
     }

@@ -1,5 +1,6 @@
 package com.brins.animator;
 
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,31 +18,16 @@ import android.widget.RadioGroup;
 
 public class Fragment1 extends Fragmentbase{
 
-    private Button bt;
-    private ImageView iv;
     private boolean isStart=false;
-    RadioGroup radioGroup;
-    RadioGroup radioGroup2;
-    private Interpolator AccDecinterpolator=new AccelerateDecelerateInterpolator();
-    private Interpolator Linearinterpolator=new LinearInterpolator();
-    private Interpolator bounceInterpolator=new BounceInterpolator();
+    public Fragment1(String title) {
 
-
-    public Fragment1() {
-
-        super();
+        super(title);
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.from(getContext()).inflate(R.layout.fragment1,container,false);
-        iv=view.findViewById(R.id.iv);
-        bt=view.findViewById(R.id.动画);
-        radioGroup=view.findViewById(R.id.type);
-        radioGroup2=view.findViewById(R.id.interatortype);
-
-        return view;
+        return super.onCreateView(inflater,container,savedInstanceState);
     }
 
 
@@ -143,10 +129,30 @@ public class Fragment1 extends Fragmentbase{
 
                 case R.id.rotaY:
                 {
-                    iv.animate().rotationY(360).setInterpolator(AccDecinterpolator)
-                            .setDuration(1500)
-                            .start();
-                    isStart=true;
+                    switch (radioGroup2.getCheckedRadioButtonId()){
+                        case R.id.acdec:{
+                            iv.animate().rotationY(360).setInterpolator(AccDecinterpolator)
+                                    .setDuration(1500)
+                                    .start();
+                            isStart=true;
+                            break;
+                        }
+                        case R.id.linear:{
+                            iv.animate().rotationY(360).setInterpolator(Linearinterpolator)
+                                    .setDuration(1500)
+                                    .start();
+                            isStart=true;
+                            break;
+                        }
+                        case R.id.bound:{
+                            iv.animate().rotationY(360).setInterpolator(bounceInterpolator)
+                                    .setDuration(1500)
+                                    .start();
+                            isStart=true;
+                            break;
+                        }
+
+                    }
                     break;
                 }
             }
