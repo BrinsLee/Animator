@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/动画"
+        android:layout_width="wrap_content"
+        android:text="动画"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/tranX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X轴平移"
+                android:textSize="15sp" />
+            <RadioButton
+                android:id="@+id/tranY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y轴平移"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rotaX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X轴旋转"
+                android:textSize="15sp" />
+            <RadioButton
+                android:id="@+id/rotaY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y轴旋转"
+                android:textSize="15sp" />
+        </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/interatortype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/acdec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AccelerateDecelerateInterpolator"
+                    android:textSize="15sp" />
+                <RadioButton
+                    android:id="@+id/linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LinearInterpolator"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/bound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BounceInterpolator"
+                    android:textSize="15sp" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_gravity="center"
+        android:src="@drawable/lanqiu"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerInside"/>
+
+</LinearLayout>
